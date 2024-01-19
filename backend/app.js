@@ -15,9 +15,10 @@ async function fetchData(prompt) {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            prompt: 
-            ` Write me a summary from these data:
-            ${prompt}`,
+            messages:[{
+                role: "user",
+                content: ` Write me a summary from these data: ${prompt}`
+            }],
             max_tokens: 5
         })
     });
