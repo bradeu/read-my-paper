@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 const API_URL = "https://api.openai.com/v1/chat/completions";
-const API_KEY = "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";
+const API_KEY = "...";
 
 async function fetchData(prompt) {
     const response = await fetch(API_URL, {
