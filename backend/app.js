@@ -1,39 +1,18 @@
 import express from "express";
+import router from "./routes/index.js";
+import bodyParser from "bodyParser";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-const API_URL = "https://api.openai.com/v1/chat/completions";
-const API_KEY = "...";
-
-async function fetchData(prompt) {
-    const response = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-            Authorization: `Bearer ${API_KEY}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages:[{
-                role: "user",
-                content: ` Write me a summary from these data: ${prompt}`
-            }],
-            max_tokens: 5
-        })
-    });
-    const data = await response.json()
-    console.log(data)
-};
-
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
-
-app.post("/", (req, res) => {
-    fetchData(req.body);
-});
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use("/", router);
 
 app.listen(port, () => {
     console.log(`server is running on port ${port}`);
 });
+
+export default app;
