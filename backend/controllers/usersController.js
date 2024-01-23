@@ -1,4 +1,4 @@
-import mongoose from "../config/mongoose.js";
+import User from "../models/users.js";
 
 class UsersController {
   static async getUser(req, res, next) {

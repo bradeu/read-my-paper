@@ -1,4 +1,4 @@
-import mongoose from "../config/mongoose.js";
+import Response from "../models/responses.js"
 
 class ResponsesController {
     static async getResponse(req, res, next) {

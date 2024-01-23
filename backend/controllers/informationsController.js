@@ -1,4 +1,4 @@
-import mongoose from "../config/mongoose.js";
+import Query from "../models/queries.js";
 
 class InformationsController {
     static async getInformation(req, res, next) {

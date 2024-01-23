@@ -1,4 +1,4 @@
-import mongoose from "../config/mongoose.js";
+import Query from "../models/queries.js";
 
 class QueriesController {
     static async getQuery(req, res, next) {

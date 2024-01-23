@@ -1,8 +1,11 @@
 import mongoose from "../config/mongoose.js"
 
+const Schema = mongoose.Schema;
+
 const userSchema = new mongoose.Schema({
-  username: String,
-  email: String,
+    user_id: Schema.Types.ObjectId,
+    username: String,
+    email: String,
 });
 
 const User = mongoose.model('User', userSchema);
