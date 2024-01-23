@@ -1,4 +1,4 @@
-import { supabase } from "../config/supabase.js";
+import mongoose from "../config/mongoose.js";
 
 class InformationsController {
     static async getInformation(req, res, next) {

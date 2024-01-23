@@ -1,4 +1,4 @@
-import { supabase } from "../config/supabase.js";
+import mongoose from "../config/mongoose.js";
 
 class QueriesController {
     static async getQuery(req, res, next) {

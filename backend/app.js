@@ -1,6 +1,7 @@
 import express from "express";
 import router from "./routes/index.js";
 import bodyParser from "body-parser";
+import mongoose from "./config/mongoose.js";
 import dotenv from "dotenv";
 dotenv.config();
 

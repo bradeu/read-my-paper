@@ -1,11 +1,11 @@
-const API_URL = "https://api.openai.com/v1/chat/completions";
+const apiURL = process.env.API_URL;
 const apiKey = process.env.API_KEY;
 
 async function fetchData(prompt) {
-    const response = await fetch(API_URL, {
+    const response = await fetch(apiURL, {
         method: "POST",
         headers: {
-            Authorization: `Bearer ${API_KEY}`,
+            Authorization: `Bearer ${apiKey}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
